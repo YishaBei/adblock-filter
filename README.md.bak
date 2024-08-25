@@ -1,8 +1,34 @@
 <h3>使用: <a href="https://github.com/fordes123/ad-filters-subscriber">fordes123/ad-filters-subscriber</a> 构建，<a href="https://github.com/fordes123/ad-filters-subscriber#示例配置">快速开始？</a></h3>
 
-
-### 上游规则
-<p>请查阅: <a href="https://github.com/YishaBei/adblock-filter/blob/v2/src/main/resources/application.yml">application.yml</a><p>
+<details>
+<summary>上游规则</summary>
+<ul>
+    <li><a href="https://github.com/AdguardTeam/AdGuardFilters">AdGuard Filters</a></li>
+    <li><a href="https://github.com/AdguardTeam/AdGuardFilters">AdGuard Chinese Filters</a></li>
+    <li><a href="https://github.com/AdguardTeam/AdGuardFilters">AdGuard URLTracking Filter</a></li>
+    <li><a href="https://github.com/AdguardTeam/AdGuardFilters">AdGuard Annoyances Filter</a></li>
+    <li><a href="https://github.com/AdguardTeam/AdGuardFilters">AdGuard Mobile Filter</a></li>
+    <li><a href="https://github.com/AdguardTeam/AdGuardSDNSFilter">AdGuard DNS Filter</a></li>
+    <li><a href="https://github.com/Perflyst/PiHoleBlocklist">Smart-TV Blocklist</a></li>
+    <li><a href="https://adaway.org">AdAway Default Blocklist</a></li>
+    <li><a href="https://github.com/badmojr/1Hosts">1Hosts Lite</a></li>
+    <li><a href="https://github.com/hagezi/dns-blocklists">HaGeZi's Anti-Piracy Blocklist</a></li>
+    <li><a href="https://pgl.yoyo.org/adservers">Peter Lowe's Blocklist</a></li>
+    <li><a href="https://github.com/Cats-Team/AdRules">AdRules DNS List</a></li>
+    <li><a href="https://github.com/crazy-max/WindowsSpyBlocker">WindowsSpyBlocker</a></li>
+    <li><a href="https://github.com/TG-Twilight/AWAvenue-Ads-Rule">AWAvenue-Ads-Rule</a></li> 
+    <li><a href="https://oisd.nl">OISD Blocklist Small</a></li> 
+    <li><a href="https://easylist.to">EasyList</a></li>
+    <li><a href="https://easylist.to">EasyPrivacy</a></li>
+    <li><a href="https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english">LegitimateURLShortener</a></li>
+	<li><a href="https://github.com/nextdns/native-tracking-domains">NEXTDNS - HUAWEI</a></li>
+	<li><a href="https://github.com/nextdns/native-tracking-domains">NEXTDNS - XIAOMI</a></li>
+	<li><a href="https://github.com/nextdns/native-tracking-domains">NEXTDNS - SAMSUNG</a></li>
+	<li><a href="https://github.com/nextdns/native-tracking-domains">NEXTDNS - APPLE</a></li>
+	<li><a href="https://github.com/jdlingyu/ad-wars">ad-wars</a></li>
+	<li><a href="https://github.com/YishaBei/AdRule-Merge/blob/main/rule/mylist.txt">自用额外补充规则</a></li>
+</ul>
+</details>
 
 | 文件 | 适用 | github | ghproxy | jsdelivr |
 |---|:---|:---:|:---:|:---:|

@@ -2,7 +2,7 @@ spring:
   application:
     name: ad-filters-subscriber
   profiles:
-    active: prod  #切换至 dev 即可输出调试信息
+    active: prod
 
 logging:
   file:
@@ -10,51 +10,157 @@ logging:
 
 application:
   config:
-    expected_quantity: 2000000  #预期规则数量
-    fault_tolerance: 0.001 #容错率
-    warn_limit: 6 #警告阈值, 原始规则长度小于该值时会输出警告日志
+    expected_quantity: 2000000
+    fault_tolerance: 0.001
+    warn_limit: 6
 
-    # 域名检测，启用时将进行解析以验证域名有效性
-    # 注意: 开启此功能可能导致处理时间大幅延长
     domain-detect:
-      enable: false
+      enable: true
       timeout: 10
-
-  # 规则源配置，remote为远程规则，local为本地规则，支持多个规则源
   rule:
-    #远程订阅规则 （！使用前请删除下方示例配置, 注意缩进）
     remote:
-      - name: 'Subscription 1'               #可选参数: 规则名称，如无将使用 path 作为名称
-        path: 'https://example.org/rule.txt' #必要参数: 规则url，仅支持 http/https，不限定响应内容格式
-        type: easylist                       #可选参数: 规则类型：easylist (默认)、dnsmasq、clash、smartdns、hosts
+      - name: AdGuard 基础过滤器
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt
+        type: easylist
 
-      - name: 'Subscription 2'
-        path: 'http://example.org/rule.txt'
+      - name: AdGuard Chinese Filters
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt
+        type: easylist
 
-    #本地规则文件
+      - name: AdGuard URLTracking Filter
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_17_TrackParam/filter.txt
+        type: easylist
+
+      - name: AdGuard Annoyances Filter
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_14_Annoyances/filter.txt
+        type: easylist
+
+      - name: AdGuard Mobile Filter
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_11_Mobile/filter.txt
+        type: easylist
+
+      - name: AdGuard DNS Filter
+        path: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+        type: easylist
+
+      - name: Smart-TV Blocklist
+        path: https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV-AGH.txt
+        type: easylist
+
+      - name: AdAway Default Blocklist
+        path: https://adaway.org/hosts.txt
+        type: hosts
+
+      - name: 1Hosts Lite
+        path: https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/adblock.txt
+        type: easylist
+
+      - name: 1Hosts Mini
+        path: https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/dnsmasq.conf
+        type: dnsmasq
+
+      - name: HaGeZi's Anti-Piracy Blocklist
+        path: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/anti.piracy.txt
+        type: easylist
+
+      - name: HaGeZi's Anti-Piracy Blocklist
+        path: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/dnsmasq/anti.piracy.txt
+        type: dnsmasq
+
+      - name: HaGeZi's Anti-Piracy Blocklist
+        path: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/light.txt
+        type: hosts
+
+      - name: Peter Lowe's Blocklist
+        path: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=adblockplus&showintro=1&mimetype=plaintext
+        type: easylist
+
+      - name: WindowsSpyBlocker
+        path: https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt
+        type: hosts
+
+      - name: AdRules DNS List
+        path: https://raw.githubusercontent.com/Cats-Team/AdRules/main/dns.txt
+        type: easylist
+
+      - name: AdRules DNS List
+        path: https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt
+        type: clash
+
+      - name: AdRules DNS List
+        path: https://raw.githubusercontent.com/Cats-Team/AdRules/main/smart-dns.conf
+        type: smartdns
+
+      - name: OISD Blocklist Small
+        path: https://small.oisd.nl
+        type: easylist
+
+      - name: EasyList
+        path: https://easylist.to/easylist/easylist.txt
+        type: easylist
+
+      - name: EasyPrivacy
+        path: https://easylist.to/easylist/easyprivacy.txt
+        type: easylist
+
+      - name: LegitimateURLShortener
+        path: https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt
+        type: easylist
+
+      - name: NEXTDNS - HUAWEI
+        path: https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/huawei
+        type: easylist
+
+      - name: NEXTDNS - XIAOMI
+        path: https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/xiaomi
+        type: easylist
+
+      - name: NEXTDNS - SAMSUNG
+        path: https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/samsung
+        type: easylist
+
+      - name: NEXTDNS - APPLE
+        path: https://raw.githubusercontent.com/nextdns/native-tracking-domains/main/domains/apple
+        type: easylist
+
+      - name: ad-wars
+        path: https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
+        type: hosts
+
+      - name: Loyalsoldier/clash-rules 广告域名列表
+        path: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt
+        type: clash
+
+      - name: 1Hosts mini
+        path: https://raw.githubusercontent.com/badmojr/1Hosts/master/mini/hosts.txt
+        type: hosts
+
+      - name: anti-ad smartdns
+        path: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-smartdns.conf
+        type: smartdns
+
+      - name: adblock for dnsmasq
+        path: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/adblock-for-dnsmasq.conf
+        type: dnsmasq
+
     local:
-      - name: 'local rule'
-        path: 'local-rule.txt' #支持绝对/相对路径
+      - name: local rule
+        path: /rule/private.txt
+        type: easylist
 
-  #输出配置
   output:
-    #文件头配置，将自动作为注释添加至每个规则文件开始
-    #可使用占位符 ${name}、${type}、${desc} 以及 ${date} (当前日期)
     file_header: |
-      ADFS AdBlock ${type}
+      YishaBei AdBlock ${type}
       Last Modified: ${date}
-      Homepage: https://github.com/fordes123/ad-filters-subscriber/
-
-    path: rule #输出规则文件的路径，支持绝对/相对路径
-    #输出规则文件列表 （！注意缩进，且每个类型只能输出一个文件）
+      Homepage: https://github.com/YishaBei/adblock-filter
+    path: rule
     files:
-      - name: easylist.txt     #必要参数: 文件名
-        type: easylist         #必要参数: 文件类型: easylist、dnsmasq、clash、smartdns、hosts
-        desc: 'ADFS EasyList'  #可选参数: 文件描述，可在file_header中通过 ${} 中使用
+      - name: easylist.txt
+        type: easylist
         filter:
-          - basic              #基本规则，不包含任何控制、匹配符号, 可以转换为 hosts
-          - wildcard           #通配规则，仅使用通配符
-          - unknown            #其他规则，如使用了正则、高级修饰符号等，这表示目前无法支持
+          - basic
+          - wildcard
+          - unknown
 
       - name: dns.txt
         type: easylist
@@ -62,14 +168,19 @@ application:
           - basic
           - wildcard
 
-      - name: dnsmasq.txt
+      - name: modify.txt
+        type: easylist
+        filter:
+          - unknown
+
+      - name: dnsmasq.conf
         type: dnsmasq
 
       - name: clash.yaml
         type: clash
 
-      - name: smartdns.txt
+      - name: smartdns.conf
         type: smartdns
 
-      - name: hosts.txt
+      - name: hosts
         type: hosts
