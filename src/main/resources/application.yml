@@ -145,7 +145,7 @@ application:
 
     local:
       - name: local rule
-        path: /rule/private.txt
+        path: rule/private.txt
         type: easylist
 
   output:
