@@ -15,7 +15,7 @@ application:
     warn_limit: 6
 
     domain-detect:
-      enable: true
+      enable: false
       timeout: 10
   rule:
     remote:
@@ -142,6 +142,10 @@ application:
       - name: adblock for dnsmasq
         path: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/adblock-for-dnsmasq.conf
         type: dnsmasq
+
+      - name: anti-ip-attribution
+        path: https://raw.githubusercontent.com/SunsetMkt/anti-ip-attribution/main/generated/rule-set-reject.list
+        type: clash
 
     local:
       - name: local rule
