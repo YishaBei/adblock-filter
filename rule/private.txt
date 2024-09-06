@@ -1,4 +1,4 @@
-@@||nstool.netease.com^$important
+||nstool.netease.com^
 @@||sofire.baidu.com^$important
 ||long-term-cache.xuexi.cn^
 ||*.nelreports.net^
@@ -131,3 +131,5 @@ bilibili.com##.recommended-swipe, .grid-anchor
 ||tsms*.security.dbankcloud.$important
 ||hiboard-*.dbankcdn.$important
 ||*.v.smtcdns.com^$important
+@@||ac.dun.163.com^$important
+||*.v1d.pkoplink.com^$important
